@@ -1,0 +1,22 @@
+{
+  "generator-jhipster": {
+    "baseName": "ExpressO",
+    "packageName": "com.catalyst.express",
+    "packageFolder": "com/catalyst/express",
+    "authenticationType": "session",
+    "hibernateCache": "no",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "no",
+    "useSass": true,
+    "buildTool": "maven",
+    "frontendBuilder": "gulp",
+    "enableTranslation": false,
+    "enableSocialSignIn": false,
+    "rememberMeKey": "88e7f1062a73d2911e276a4c56a14fd177c43c85",
+    "testFrameworks": []
+  }
+}
