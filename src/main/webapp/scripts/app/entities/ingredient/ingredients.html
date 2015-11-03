@@ -44,7 +44,6 @@
                     <th>Name</th>
                     <th>Cost</th>
                     <th>Unit</th>
-                    <th>recipe</th>
                     <th></th>
                 </tr>
             </thead>
@@ -52,11 +51,8 @@
                 <tr ng-repeat="ingredient in ingredients track by ingredient.id">
                     <td><a ui-sref="ingredient.detail({id:ingredient.id})">{{ingredient.id}}</a></td>
                     <td>{{ingredient.name}}</td>
-                    <td>{{ingredient.cost}}</td>
+                    <td>{{ingredient.cost | currency}}</td>
                     <td>{{ingredient.unit}}</td>
-                    <td>
-                        <a ui-sref="recipe.detail({id:ingredient.recipe.id})">{{ingredient.recipe.name}}</a>
-                    </td>
                     <td>
                         <button type="submit"
                                 ui-sref="ingredient.detail({id:ingredient.id})"

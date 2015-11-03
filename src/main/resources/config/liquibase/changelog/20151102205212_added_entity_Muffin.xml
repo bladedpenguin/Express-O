@@ -26,5 +26,28 @@
             <column name="vendor" type="varchar(255)"/>
         </createTable>
         
+        <createTable tableName="muffin_allergen">
+            <column name="allergens_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="muffins_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="muffins_id, allergens_id" tableName="muffin_allergen"/>
+
+        <addForeignKeyConstraint baseColumnNames="muffins_id"
+                                 baseTableName="muffin_allergen"
+                                 constraintName="fk_muffin_allergen_allergen_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="muffin"/>
+
+        <addForeignKeyConstraint baseColumnNames="allergens_id"
+                                 baseTableName="muffin_allergen"
+                                 constraintName="fk_allergen_allergen_muffin_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="allergen"/>
+        
     </changeSet>
 </databaseChangeLog>

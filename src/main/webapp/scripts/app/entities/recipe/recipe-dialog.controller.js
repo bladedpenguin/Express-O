@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('expressOApp').controller('RecipeDialogController',
-    ['$scope', '$stateParams', '$modalInstance', 'entity', 'Recipe',
-        function($scope, $stateParams, $modalInstance, entity, Recipe) {
+    ['$scope', '$stateParams', '$modalInstance', 'entity', 'Recipe', 'Ingredient',
+        function($scope, $stateParams, $modalInstance, entity, Recipe, Ingredient) {
 
         $scope.recipe = entity;
+        $scope.ingredients = Ingredient.query();
         $scope.load = function(id) {
             Recipe.get({id : id}, function(result) {
                 $scope.recipe = result;

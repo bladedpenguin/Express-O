@@ -28,14 +28,7 @@
                 <constraints nullable="false" />
             </column>
             <column name="unit" type="varchar(255)"/>
-            <column name="recipe_id" type="bigint"/>
         </createTable>
         
-        <addForeignKeyConstraint baseColumnNames="recipe_id"
-                                 baseTableName="ingredient"
-                                 constraintName="fk_ingredient_recipe_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="recipe"/>
-
     </changeSet>
 </databaseChangeLog>

@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('expressOApp').controller('MuffinDialogController',
-    ['$scope', '$stateParams', '$modalInstance', 'entity', 'Muffin',
-        function($scope, $stateParams, $modalInstance, entity, Muffin) {
+    ['$scope', '$stateParams', '$modalInstance', 'entity', 'Muffin', 'Allergen',
+        function($scope, $stateParams, $modalInstance, entity, Muffin, Allergen) {
 
         $scope.muffin = entity;
+        $scope.allergens = Allergen.query();
         $scope.load = function(id) {
             Muffin.get({id : id}, function(result) {
                 $scope.muffin = result;

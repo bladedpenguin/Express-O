@@ -9,5 +9,6 @@
     <include file="classpath:config/liquibase/changelog/20151102201639_added_entity_Ingredient.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20151102205212_added_entity_Muffin.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20151102205349_added_entity_Allergy.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151102205349_added_entity_Allergen.xml" relativeToChangelogFile="false"/>
     <!-- JHipster will add liquibase changelogs here -->
 </databaseChangeLog>

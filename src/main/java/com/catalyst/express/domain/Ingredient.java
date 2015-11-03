@@ -1,5 +1,6 @@
 package com.catalyst.express.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -31,8 +32,9 @@ public class Ingredient implements Serializable {
     @Column(name = "unit")
     private String unit;
 
-    @ManyToOne
-    private Recipe recipe;
+    @ManyToMany(mappedBy = "ingredients")
+    @JsonIgnore
+    private Set<Recipe> recipes = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -66,12 +68,12 @@ public class Ingredient implements Serializable {
         this.unit = unit;
     }
 
-    public Recipe getRecipe() {
-        return recipe;
+    public Set<Recipe> getRecipes() {
+        return recipes;
     }
 
-    public void setRecipe(Recipe recipe) {
-        this.recipe = recipe;
+    public void setRecipes(Set<Recipe> recipes) {
+        this.recipes = recipes;
     }
 
     @Override

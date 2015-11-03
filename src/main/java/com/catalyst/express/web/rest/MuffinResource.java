@@ -93,7 +93,7 @@ public class MuffinResource {
     @Timed
     public ResponseEntity<Muffin> getMuffin(@PathVariable Long id) {
         log.debug("REST request to get Muffin : {}", id);
-        return Optional.ofNullable(muffinRepository.findOne(id))
+        return Optional.ofNullable(muffinRepository.findOneWithEagerRelationships(id))
             .map(muffin -> new ResponseEntity<>(
                 muffin,
                 HttpStatus.OK))

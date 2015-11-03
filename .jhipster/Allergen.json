@@ -1,0 +1,22 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "muffin",
+            "otherEntityName": "muffin",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "allergen"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151102205349",
+    "dto": "no",
+    "pagination": "pager"
+}

@@ -4,6 +4,8 @@ package com.catalyst.express.domain;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -22,6 +24,11 @@ public class Recipe implements Serializable {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @ManyToMany    @JoinTable(name = "recipe_ingredient",
+               joinColumns = @JoinColumn(name="recipes_id", referencedColumnName="ID"),
+               inverseJoinColumns = @JoinColumn(name="ingredients_id", referencedColumnName="ID"))
+    private Set<Ingredient> ingredients = new HashSet<>();
+
     public Long getId() {
         return id;
     }
@@ -36,6 +43,14 @@ public class Recipe implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(Set<Ingredient> ingredients) {
+        this.ingredients = ingredients;
     }
 
     @Override

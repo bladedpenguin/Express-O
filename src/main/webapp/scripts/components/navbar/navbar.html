@@ -17,6 +17,30 @@
                         <span class="hidden-sm">Home</span>
                     </a>
                 </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="recipes" data-toggle="collapse" data-target=".navbar-collapse.in">
+                        <span class="glyphicon glyphicon-home"></span>
+                        <span class="hidden-sm">Coffee Recipes</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="ingredients" data-toggle="collapse" data-target=".navbar-collapse.in">
+                        <span class="glyphicon glyphicon-home"></span>
+                        <span class="hidden-sm">Ingredients</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="muffins" data-toggle="collapse" data-target=".navbar-collapse.in">
+                        <span class="glyphicon glyphicon-home"></span>
+                        <span class="hidden-sm">Baked Goods</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="allergens" data-toggle="collapse" data-target=".navbar-collapse.in">
+                        <span class="glyphicon glyphicon-home"></span>
+                        <span class="hidden-sm">Allergens</span>
+                    </a>
+                </li>
                 <li ui-sref-active="active" ng-switch-when="true" class="dropdown pointer">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">
                         <span>
@@ -34,8 +58,8 @@
                         &#xA0;<span >ingredient</span></a></li>
                         <li ui-sref-active="active" ><a ui-sref="muffin" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
                         &#xA0;<span >muffin</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="allergy" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >allergy</span></a></li>
+                        <li ui-sref-active="active" ><a ui-sref="allergen" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span >allergen</span></a></li>
                         <!-- JHipster will add entities to the menu here -->
                     </ul>
                 </li>

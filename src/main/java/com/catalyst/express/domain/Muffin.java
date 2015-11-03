@@ -4,6 +4,8 @@ package com.catalyst.express.domain;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -26,6 +28,11 @@ public class Muffin implements Serializable {
 
     @Column(name = "vendor")
     private String vendor;
+
+    @ManyToMany    @JoinTable(name = "muffin_allergen",
+               joinColumns = @JoinColumn(name="muffins_id", referencedColumnName="ID"),
+               inverseJoinColumns = @JoinColumn(name="allergens_id", referencedColumnName="ID"))
+    private Set<Allergen> allergens = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -57,6 +64,14 @@ public class Muffin implements Serializable {
 
     public void setVendor(String vendor) {
         this.vendor = vendor;
+    }
+
+    public Set<Allergen> getAllergens() {
+        return allergens;
+    }
+
+    public void setAllergens(Set<Allergen> allergens) {
+        this.allergens = allergens;
     }
 
     @Override

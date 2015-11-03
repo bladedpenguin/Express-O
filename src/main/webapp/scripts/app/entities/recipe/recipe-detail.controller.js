@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('expressOApp')
-    .controller('RecipeDetailController', function ($scope, $rootScope, $stateParams, entity, Recipe) {
+    .controller('RecipeDetailController', function ($scope, $rootScope, $stateParams, entity, Recipe, Ingredient) {
         $scope.recipe = entity;
         $scope.load = function (id) {
             Recipe.get({id: id}, function(result) {

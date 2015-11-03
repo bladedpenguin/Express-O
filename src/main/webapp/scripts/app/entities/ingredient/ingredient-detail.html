@@ -23,7 +23,7 @@
                     <span>Cost</span>
                 </td>
                 <td>
-                    <span class="form-control-static">{{ingredient.cost}}</span>
+                    <span class="form-control-static">{{ingredient.cost | currency}}</span>
                 </td>
             </tr>
             <tr>
@@ -32,14 +32,6 @@
                 </td>
                 <td>
                     <span class="form-control-static">{{ingredient.unit}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>recipe</span>
-                </td>
-                <td>
-                    <a class="form-control-static" ui-sref="recipe.detail({id:ingredient.recipe.id})">{{ingredient.recipe.name}}</a>
                 </td>
             </tr>
             </tbody>

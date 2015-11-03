@@ -16,7 +16,7 @@ angular.module('expressOApp', ['LocalStorageModule',
             }
             
         });
-
+        
         $rootScope.$on('$stateChangeSuccess',  function(event, toState, toParams, fromState, fromParams) {
             var titleKey = 'ExpressO' ;
 
@@ -86,4 +86,4 @@ angular.module('expressOApp', ['LocalStorageModule',
             is: function(val) { return [true,false,0,1].indexOf(val) >= 0 },
             pattern: /bool|true|0|1/
         });
-    }]);;
+    }]);

@@ -18,6 +18,16 @@
                     <span class="form-control-static">{{recipe.name}}</span>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <span>ingredient</span>
+                </td>
+                <td>
+                    <span ng-repeat="ingredient in recipe.ingredients">
+                        <a class="form-control-static" ui-sref="ingredient.detail({id: {{ingredient.id}}})">{{ingredient.id}}</a>{{$last ? '' : ', '}}
+                    <span>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>

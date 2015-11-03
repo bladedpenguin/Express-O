@@ -42,6 +42,10 @@
                      />
         </div>
 
+        <div class="form-group">
+            <label for="field_allergen">allergen</label>
+            <select class="form-control" id="field_allergen" multiple name="allergen" ng-model="muffin.allergens" ng-options="allergen as allergen.id for allergen in allergens track by allergen.id"></select>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">

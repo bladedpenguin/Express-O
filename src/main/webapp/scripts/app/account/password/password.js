@@ -7,7 +7,7 @@ angular.module('expressOApp')
                 parent: 'account',
                 url: '/password',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: [],
                     pageTitle: 'Password'
                 },
                 views: {

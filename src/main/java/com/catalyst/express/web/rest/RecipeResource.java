@@ -93,7 +93,7 @@ public class RecipeResource {
     @Timed
     public ResponseEntity<Recipe> getRecipe(@PathVariable Long id) {
         log.debug("REST request to get Recipe : {}", id);
-        return Optional.ofNullable(recipeRepository.findOne(id))
+        return Optional.ofNullable(recipeRepository.findOneWithEagerRelationships(id))
             .map(recipe -> new ResponseEntity<>(
                 recipe,
                 HttpStatus.OK))

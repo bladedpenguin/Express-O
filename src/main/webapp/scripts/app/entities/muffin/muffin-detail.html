@@ -34,6 +34,16 @@
                     <span class="form-control-static">{{muffin.vendor}}</span>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <span>allergen</span>
+                </td>
+                <td>
+                    <span ng-repeat="allergen in muffin.allergens">
+                        <a class="form-control-static" ui-sref="allergen.detail({id: {{allergen.id}}})">{{allergen.id}}</a>{{$last ? '' : ', '}}
+                    <span>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>

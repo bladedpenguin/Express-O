@@ -1,5 +1,14 @@
 {
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "allergen",
+            "otherEntityName": "allergen",
+            "relationshipType": "many-to-many",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "muffins"
+        }
+    ],
     "fields": [
         {
             "fieldId": 1,

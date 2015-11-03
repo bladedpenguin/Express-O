@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('expressOApp')
-    .controller('MuffinDetailController', function ($scope, $rootScope, $stateParams, entity, Muffin) {
+    .controller('MuffinDetailController', function ($scope, $rootScope, $stateParams, entity, Muffin, Allergen) {
         $scope.muffin = entity;
         $scope.load = function (id) {
             Muffin.get({id: id}, function(result) {

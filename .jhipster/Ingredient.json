@@ -4,8 +4,9 @@
             "relationshipId": 1,
             "relationshipName": "recipe",
             "otherEntityName": "recipe",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "name"
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "ingredient"
         }
     ],
     "fields": [

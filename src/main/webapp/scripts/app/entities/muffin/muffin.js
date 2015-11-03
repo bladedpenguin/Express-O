@@ -7,7 +7,7 @@ angular.module('expressOApp')
                 parent: 'entity',
                 url: '/muffins',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: [ ],
                     pageTitle: 'Muffins'
                 },
                 views: {
@@ -23,7 +23,7 @@ angular.module('expressOApp')
                 parent: 'entity',
                 url: '/muffin/{id}',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: [ ],
                     pageTitle: 'Muffin'
                 },
                 views: {
@@ -42,7 +42,7 @@ angular.module('expressOApp')
                 parent: 'muffin',
                 url: '/new',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: [ ],
                 },
                 onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state, $modal) {
                     $modal.open({
@@ -70,7 +70,7 @@ angular.module('expressOApp')
                 parent: 'muffin',
                 url: '/{id}/edit',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: [ ],
                 },
                 onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state, $modal) {
                     $modal.open({
