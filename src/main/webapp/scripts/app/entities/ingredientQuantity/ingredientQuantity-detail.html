@@ -1,6 +1,6 @@
 
 <div>
-    <h2><span>Ingredient</span> {{ingredient.id}}</h2>
+    <h2><span>IngredientQuantity</span> {{ingredientQuantity.id}}</h2>
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
@@ -12,26 +12,26 @@
             <tbody>
             <tr>
                 <td>
-                    <span>Name</span>
+                    <span>Quantity</span>
                 </td>
                 <td>
-                    <span class="form-control-static">{{ingredient.name}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>Average Cost</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{ingredient.cost | currency}}</span>
+                    <span class="form-control-static">{{ingredientQuantity.quantity}}</span>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <span>Unit</span>
+                    <span>recipe</span>
                 </td>
                 <td>
-                    <span class="form-control-static">{{ingredient.unit}}</span>
+                    <a class="form-control-static" ui-sref="recipe.detail({id:ingredientQuantity.recipe.id})">{{ingredientQuantity.recipe.name}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ingredient</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="ingredient.detail({id:ingredientQuantity.ingredient.id})">{{ingredientQuantity.ingredient.name}}</a>
                 </td>
             </tr>
             </tbody>

@@ -32,6 +32,17 @@ body {
     color: #ccc
 }
 
+.navbar-default {
+    background-color: ##FFFDD0;
+    border-color: #e7e7e7;
+    
+.navbar-default .navbar-nav > li > a {
+    color: #4D2106; }
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #F7BD99;
+    background-color: transparent; }
+    
+    
 .browserupgrade {
     margin: 0.2em 0;
     background: #ccc;
@@ -68,6 +79,11 @@ body {
     background: url("../images/hipster.png") no-repeat center top;
     background-size: contain;
 }
+
+li > a >img {
+    height: 20px;
+}
+
 
 .pad {
     padding: 10px;

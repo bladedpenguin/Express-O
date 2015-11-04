@@ -44,6 +44,7 @@
                     <th>Name</th>
                     <th>Cost</th>
                     <th>Vendor</th>
+                    <th>Category</th>
                     <th></th>
                 </tr>
             </thead>
@@ -51,8 +52,9 @@
                 <tr ng-repeat="muffin in muffins track by muffin.id">
                     <td><a ui-sref="muffin.detail({id:muffin.id})">{{muffin.id}}</a></td>
                     <td>{{muffin.name}}</td>
-                    <td>{{muffin.cost}}</td>
+                    <td>{{muffin.cost | currency}}</td>
                     <td>{{muffin.vendor}}</td>
+                    <td>{{muffin.category.name}}</td>
                     <td>
                         <button type="submit"
                                 ui-sref="muffin.detail({id:muffin.id})"

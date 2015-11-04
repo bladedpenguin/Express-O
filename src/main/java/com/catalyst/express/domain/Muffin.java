@@ -34,6 +34,10 @@ public class Muffin implements Serializable {
                inverseJoinColumns = @JoinColumn(name="allergens_id", referencedColumnName="ID"))
     private Set<Allergen> allergens = new HashSet<>();
 
+    
+    @ManyToOne
+    private Category category;
+    
     public Long getId() {
         return id;
     }
@@ -104,4 +108,12 @@ public class Muffin implements Serializable {
             ", vendor='" + vendor + "'" +
             '}';
     }
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 }

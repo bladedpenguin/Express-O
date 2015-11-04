@@ -1,6 +1,6 @@
 
 <div>
-    <h2><span>Muffin</span> {{muffin.id}}</h2>
+    <h2>{{muffin.name}}</h2>
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
@@ -23,7 +23,7 @@
                     <span>Cost</span>
                 </td>
                 <td>
-                    <span class="form-control-static">{{muffin.cost}}</span>
+                    <span class="form-control-static">{{muffin.cost | currency}}</span>
                 </td>
             </tr>
             <tr>
@@ -40,8 +40,8 @@
                 </td>
                 <td>
                     <span ng-repeat="allergen in muffin.allergens">
-                        <a class="form-control-static" ui-sref="allergen.detail({id: {{allergen.id}}})">{{allergen.id}}</a>{{$last ? '' : ', '}}
-                    <span>
+                        <a class="form-control-static" ui-sref="allergen.detail({id: {{allergen.id}}})">{{allergen.name}}</a>{{$last ? '' : ', '}}
+                    </span>
                 </td>
             </tr>
             </tbody>

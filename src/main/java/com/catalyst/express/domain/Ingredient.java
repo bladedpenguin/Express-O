@@ -32,9 +32,9 @@ public class Ingredient implements Serializable {
     @Column(name = "unit")
     private String unit;
 
-    @ManyToMany(mappedBy = "ingredients")
-    @JsonIgnore
-    private Set<Recipe> recipes = new HashSet<>();
+//    @ManyToMany(mappedBy = "ingredients")
+//    @JsonIgnore
+//    private Set<Recipe> recipes = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -68,13 +68,13 @@ public class Ingredient implements Serializable {
         this.unit = unit;
     }
 
-    public Set<Recipe> getRecipes() {
-        return recipes;
-    }
-
-    public void setRecipes(Set<Recipe> recipes) {
-        this.recipes = recipes;
-    }
+//    public Set<Recipe> getRecipes() {
+//        return recipes;
+//    }
+//
+//    public void setRecipes(Set<Recipe> recipes) {
+//        this.recipes = recipes;
+//    }
 
     @Override
     public boolean equals(Object o) {

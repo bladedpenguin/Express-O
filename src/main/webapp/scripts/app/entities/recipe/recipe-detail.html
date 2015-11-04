@@ -1,6 +1,6 @@
 
 <div>
-    <h2><span>Recipe</span> {{recipe.id}}</h2>
+    <h2><span>Recipe: </span> {{recipe.name}}</h2>
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
@@ -20,12 +20,22 @@
             </tr>
             <tr>
                 <td>
-                    <span>ingredient</span>
+                    <span>Ingredients</span>
                 </td>
                 <td>
                     <span ng-repeat="ingredient in recipe.ingredients">
-                        <a class="form-control-static" ui-sref="ingredient.detail({id: {{ingredient.id}}})">{{ingredient.id}}</a>{{$last ? '' : ', '}}
+                        <a class="form-control-static" ui-sref="ingredient.detail({id: {{ingredient.ingredient.id}}})">{{ingredient.quantity}} {{ingredient.ingredient.unit}} of {{ingredient.ingredient.name}}</a>{{$last ? '' : ', '}}
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Total Cost</span>
+                </td>
+                <td>
                     <span>
+                        {{totalCost(recipe) | currency}}
+                    </span>
                 </td>
             </tr>
             </tbody>

@@ -4,19 +4,19 @@
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="clear()">&times;</button>
-        <h4 class="modal-title" id="myIngredientLabel">Create or edit a Ingredient</h4>
+        <h4 class="modal-title" id="myCategoryLabel">Create or edit a Category</h4>
     </div>
     <div class="modal-body">
         <jh-alert-error></jh-alert-error>
         <div class="form-group">
             <label for="id">ID</label>
             <input type="text" class="form-control" id="id" name="id"
-                    ng-model="ingredient.id" readonly />
+                    ng-model="category.id" readonly />
         </div>
         <div class="form-group">
             <label for="field_name">Name</label>
             <input type="text" class="form-control" name="name" id="field_name"
-                    ng-model="ingredient.name"
+                    ng-model="category.name"
                     required ng-minlength="2" />
             <div ng-show="editForm.name.$invalid">
                 <p class="help-block"
@@ -28,28 +28,6 @@
                     This field is required to be at least 2 characters.
                 </p>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="field_cost">Average Cost</label>
-            <input type="number" class="form-control" name="cost" id="field_cost"
-                    ng-model="ingredient.cost"
-                    required />
-            <div ng-show="editForm.cost.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.cost.$error.required">
-                    This field is required.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.cost.$error.number">
-                    This field should be a number.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="field_unit">Unit</label>
-            <input type="text" class="form-control" name="unit" id="field_unit"
-                    ng-model="ingredient.unit"
-                     />
         </div>
 
     </div>
