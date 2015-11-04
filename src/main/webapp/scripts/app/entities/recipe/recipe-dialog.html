@@ -29,8 +29,9 @@
                 </p>
             </div>
         </div>
-
-        <div class="form-group">
+        <button ng-click="recipe.addIngredient()">Add Ingredient</button>
+        <div class="form-group" ng-repeat="ingredient in recipe.ingredients track by ingredient.id">
+            
             <label for="field_ingredient">ingredient</label>
             <select class="form-control" id="field_ingredient" multiple name="ingredient" ng-model="recipe.ingredients" ng-options="ingredient as ingredient.name for ingredient in ingredients track by ingredient.id"></select>
         </div>
