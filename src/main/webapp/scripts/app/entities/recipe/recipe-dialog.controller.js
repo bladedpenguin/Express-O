@@ -18,6 +18,7 @@ angular.module('expressOApp').controller('RecipeDialogController',
         };
 
         $scope.save = function () {
+            console.log('saving: ' + JSON.stringify($scope.recipe));
             if ($scope.recipe.id != null) {
                 Recipe.update($scope.recipe, onSaveFinished);
             } else {

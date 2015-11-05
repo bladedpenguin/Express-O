@@ -4,6 +4,7 @@ package com.catalyst.express.domain;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import java.io.Serializable;
@@ -27,8 +28,9 @@ public class Recipe implements Serializable {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @JoinColumn
     @JsonManagedReference
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "recipe")
+    @OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
     private Set<IngredientQuantity> ingredients = new HashSet<>();
 
     public Long getId() {
@@ -80,7 +82,7 @@ public class Recipe implements Serializable {
     public String toString() {
         return "Recipe{" +
             "id=" + id +
-            ", name='" + name + "'" +
+            ", name='" + name + "', ingredients=" + ingredients +
             '}';
     }
 }

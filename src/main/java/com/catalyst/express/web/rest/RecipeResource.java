@@ -33,7 +33,7 @@ public class RecipeResource {
 
     @Inject
     private RecipeRepository recipeRepository;
-
+    
     /**
      * POST  /recipes -> Create a new recipe.
      */

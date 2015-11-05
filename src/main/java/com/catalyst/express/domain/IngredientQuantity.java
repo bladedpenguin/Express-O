@@ -5,6 +5,7 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -18,7 +19,9 @@ import java.util.Objects;
 @Table(name = "ingredient_quantity")
 public class IngredientQuantity implements Serializable {
 
-    @Id
+	private static final long serialVersionUID = -3188277458094242839L;
+
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
@@ -31,7 +34,8 @@ public class IngredientQuantity implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     private Recipe recipe;
 
-    @ManyToOne
+    
+    @ManyToOne(fetch = FetchType.EAGER)
     private Ingredient ingredient;
 
     public Long getId() {
@@ -91,7 +95,7 @@ public class IngredientQuantity implements Serializable {
     public String toString() {
         return "IngredientQuantity{" +
             "id=" + id +
-            ", quantity='" + quantity + "'" +
+            ", quantity='" + quantity + "', ingredient=" + ingredient +
             '}';
     }
 }

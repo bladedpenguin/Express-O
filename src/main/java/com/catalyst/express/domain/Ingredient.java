@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.Objects;
 
 /**
- * A Ingredient.
+ * An Ingredient.
  */
 @Entity
 @Table(name = "ingredient")

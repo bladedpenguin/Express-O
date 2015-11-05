@@ -53,7 +53,8 @@ angular.module('expressOApp')
                             entity: function () {
                                 return {
                                     name: null,
-                                    id: null
+                                    id: null,
+                                    ingredients: []
                                 };
                             }
                         }
