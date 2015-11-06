@@ -5,10 +5,14 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.Objects;
 
@@ -17,9 +21,15 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "recipe")
+@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 public class Recipe implements Serializable {
 
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 8916447238819308177L;
+
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
@@ -31,7 +41,10 @@ public class Recipe implements Serializable {
     @JoinColumn
     @JsonManagedReference
     @OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
-    private Set<IngredientQuantity> ingredients = new HashSet<>();
+    private List<IngredientQuantity> ingredients = new ArrayList<>();
+    
+    @Column
+    private Double markup;
 
     public Long getId() {
         return id;
@@ -49,11 +62,11 @@ public class Recipe implements Serializable {
         this.name = name;
     }
 
-    public Set<IngredientQuantity> getIngredients() {
+    public List<IngredientQuantity> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(Set<IngredientQuantity> ingredients) {
+    public void setIngredients(List<IngredientQuantity> ingredients) {
         this.ingredients = ingredients;
     }
 
@@ -85,4 +98,12 @@ public class Recipe implements Serializable {
             ", name='" + name + "', ingredients=" + ingredients +
             '}';
     }
+
+	public Double getMarkup() {
+		return markup;
+	}
+
+	public void setMarkup(Double markup) {
+		this.markup = markup;
+	}
 }

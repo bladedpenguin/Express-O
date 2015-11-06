@@ -1,5 +1,5 @@
 <div>
-    <h2>Muffins</h2>
+    <h2>Baked Goods</h2>
     <jh-alert></jh-alert>
     <div class="container">
         <div class="row">
@@ -43,8 +43,10 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Cost</th>
+                    <th>Retail</th>
                     <th>Vendor</th>
                     <th>Category</th>
+                    <th>Inventory</th>
                     <th></th>
                 </tr>
             </thead>
@@ -53,8 +55,10 @@
                     <td><a ui-sref="muffin.detail({id:muffin.id})">{{muffin.id}}</a></td>
                     <td>{{muffin.name}}</td>
                     <td>{{muffin.cost | currency}}</td>
+                    <td>{{muffin.cost*(1+muffin.markup) | currency}}</td>
                     <td>{{muffin.vendor}}</td>
                     <td>{{muffin.category.name}}</td>
+                    <td>{{muffin.stock}}</td>
                     <td>
                         <button type="submit"
                                 ui-sref="muffin.detail({id:muffin.id})"

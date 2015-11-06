@@ -36,6 +36,22 @@
             </div>
         </div>
         <div class="form-group">
+            <label for="field_markup">Markup</label>
+            <input type="number" class="form-control" name="markup" id="field_markup"
+                    ng-model="muffin.markup"
+                    min="0" />
+            <div ng-show="editForm.markup.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.markup.$error.min" translate-value-min="0">
+                    This field should be more than 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.markup.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
             <label for="field_vendor">Vendor</label>
             <input type="text" class="form-control" name="vendor" id="field_vendor"
                     ng-model="muffin.vendor"
@@ -51,6 +67,22 @@
             <select class="form-control" id="field_recipe" name="category" ng-model="muffin.category" ng-options="category as category.name for category in categories track by category.id">
                 <option value=""></option>
             </select>
+        </div>
+        <div class="form-group">
+            <label for="field_stock">Inventory</label>
+            <input type="number" class="form-control" name="stock" id="field_stock"
+                    ng-model="muffin.stock"
+                    min="0" />
+            <div ng-show="editForm.stock.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stock.$error.min" translate-value-min="0">
+                    This field should be more than 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.stock.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
         </div>
     </div>
     <div class="modal-footer">

@@ -43,6 +43,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Total Cost</th>
+                    <th>Retail</th>
                     <th>Ingredients</th>
                     <th></th>
                 </tr>
@@ -52,6 +53,7 @@
                     <td><a ui-sref="recipe.detail({id:recipe.id})">{{recipe.id}}</a></td>
                     <td>{{recipe.name}}</td>
                     <td>{{total(recipe) | currency}}</td>
+                    <td>{{total(recipe)*(1+recipe.markup) | currency}}</td>
                     <td><span ng-repeat="ingredient in recipe.ingredients">
                         <a class="form-control-static" ui-sref="ingredient.detail({id: {{ingredient.ingredient.id}}})">{{ingredient.quantity}} {{ingredient.ingredient.unit}} of {{ingredient.ingredient.name}}</a>{{$last ? '' : ', '}}
                     </span></td>

@@ -29,7 +29,60 @@
                 </p>
             </div>
         </div>
-        <div class="btn btn-outline" ng-click="recipe.ingredients.push({
+        <div class="form-group">
+            <label for="field_markup">Markup</label>
+            <input type="number" class="form-control" name="markup" id="field_markup"
+                    ng-model="recipe.markup"
+                    min="0" />
+            <div ng-show="editForm.markup.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.markup.$error.min" translate-value-min="0">
+                    This field should be more than 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.markup.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Quantity</th>
+                    <th>Unit</th>
+                    <th>ingredient</th>
+                    <th><div class="btn btn-default" ng-click="recipe.ingredients.push({
+                                    id: null,
+                                    quantity: 1
+                                })">Add Ingredient</div></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="ingredientQuantity in recipe.ingredients track by $index">
+                    <td><a ui-sref="ingredientQuantity.detail({id:ingredientQuantity.id})">{{ingredientQuantity.id}}</a></td>
+                    <td><input type="number" ng-model="ingredientQuantity.quantity"></td>
+                    <td>{{ingredientQuantity.ingredient.unit}}</td>
+                    <td>
+                        <select class="form-control" id="field_ingredient" name="ingredient" ng-model="ingredientQuantity.ingredient" ng-options="ingredient as ingredient.name for ingredient in ingredients track by ingredient.id"></select>
+                    </td>
+                    <td>
+                        <div type="submit"
+                                ui-sref="ingredientQuantity.detail({id:ingredientQuantity.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span> View</span>
+                        </div>
+                        <div type="submit"
+                                ng-click="delete(ingredientQuantity.id, $index)"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span> Delete</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!--<div class="btn btn-outline" ng-click="recipe.ingredients.push({
                                     id: null,
                                     quantity: 1
                                 })">Add Ingredient</div>
@@ -40,7 +93,7 @@
             <input type="number" class="form-control" name="quantity" id="field_quantity"
                     ng-model="ingredientQuantity.quantity"
                     required min="0" /> {{ingredientQuantity.ingredient.unit}}
-        </div>
+        </div>-->
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">

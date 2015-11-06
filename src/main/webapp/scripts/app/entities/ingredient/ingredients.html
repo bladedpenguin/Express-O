@@ -43,6 +43,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Average Cost</th>
+                    <th>Inventory</th>
                     <th>Unit</th>
                     <th></th>
                 </tr>
@@ -52,6 +53,7 @@
                     <td><a ui-sref="ingredient.detail({id:ingredient.id})">{{ingredient.id}}</a></td>
                     <td>{{ingredient.name}}</td>
                     <td>{{ingredient.cost | currency}}</td>
+                    <td>{{ingredient.stock}}</td>
                     <td>{{ingredient.unit}}</td>
                     <td>
                         <button type="submit"

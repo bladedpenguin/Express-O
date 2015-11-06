@@ -28,6 +28,14 @@
             </tr>
             <tr>
                 <td>
+                    <span>Markup</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{muffin.markup*100}}%</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
                     <span>Vendor</span>
                 </td>
                 <td>
@@ -36,12 +44,20 @@
             </tr>
             <tr>
                 <td>
-                    <span>allergen</span>
+                    <span>Allergens</span>
                 </td>
                 <td>
                     <span ng-repeat="allergen in muffin.allergens">
                         <a class="form-control-static" ui-sref="allergen.detail({id: {{allergen.id}}})">{{allergen.name}}</a>{{$last ? '' : ', '}}
                     </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Inventory</span>
+                </td>
+                <td>
+                    {{muffin.stock}}
                 </td>
             </tr>
             </tbody>

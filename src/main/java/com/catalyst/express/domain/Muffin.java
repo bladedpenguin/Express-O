@@ -28,15 +28,34 @@ public class Muffin implements Serializable {
 
     @Column(name = "vendor")
     private String vendor;
+    
 
     @ManyToMany    @JoinTable(name = "muffin_allergen",
                joinColumns = @JoinColumn(name="muffins_id", referencedColumnName="ID"),
                inverseJoinColumns = @JoinColumn(name="allergens_id", referencedColumnName="ID"))
     private Set<Allergen> allergens = new HashSet<>();
 
-    
     @ManyToOne
     private Category category;
+    
+    @Column
+    private Integer stock;
+    
+    @Column
+    private Float markup;
+    
+    /**
+     * We set default value in case the value is not set yet.
+     */
+    @PrePersist
+    public void prePersist() {
+        if(markup == null) { //if you don't know, you are selling them at cost
+        	markup = 0.0f;
+        }
+        if (stock == null) { //if you don't know, you don't have any in stock
+        	stock = 0;
+        }
+    }
     
     public Long getId() {
         return id;
@@ -115,5 +134,21 @@ public class Muffin implements Serializable {
 
 	public void setCategory(Category category) {
 		this.category = category;
+	}
+
+	public Integer getStock() {
+		return stock;
+	}
+
+	public void setStock(Integer stock) {
+		this.stock = stock;
+	}
+
+	public Float getMarkup() {
+		return markup;
+	}
+
+	public void setMarkup(Float markup) {
+		this.markup = markup;
 	}
 }
