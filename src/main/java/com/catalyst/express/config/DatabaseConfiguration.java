@@ -46,11 +46,11 @@ public class DatabaseConfiguration {
     @Primary
 	public DataSource dataSource() 
 	{
-		String root = "root";
+		//String root = "root";
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setUrl("jdbc:mysql://pc10222:3306/expresso");
-		dataSource.setUsername(root);
-		dataSource.setPassword(root);
+		dataSource.setUrl("jdbc:mysql://expressodb.cco1pwxlz35s.us-east-1.rds.amazonaws.com:3306/expresso");
+		dataSource.setUsername("awsExpresso");
+		dataSource.setPassword("whateverwhatever");
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 
 		return dataSource;

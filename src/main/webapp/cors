@@ -1,0 +1,11 @@
+<CORSConfiguration>
+ <CORSRule>
+   <AllowedOrigin>http://ec2-52-87-152-103.compute-1.amazonaws.com:8080</AllowedOrigin>
+
+   <AllowedMethod>PUT</AllowedMethod>
+   <AllowedMethod>POST</AllowedMethod>
+   <AllowedMethod>DELETE</AllowedMethod>
+
+   <AllowedHeader>*</AllowedHeader>
+ </CORSRule>
+</CORSConfiguration>

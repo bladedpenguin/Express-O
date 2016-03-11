@@ -6,7 +6,8 @@ angular.module('expressOApp')
         $scope.page = 0;
         $scope.loadAll = function() {
             Recipe.query({page: $scope.page, size: 20}, function(result, headers) {
-                $scope.links = ParseLinks.parse(headers('link'));
+                //console.log("recipe query headers: "+ headers);
+                //$scope.links = ParseLinks.parse(headers('link'));
                 $scope.recipes = result;
             });
         };

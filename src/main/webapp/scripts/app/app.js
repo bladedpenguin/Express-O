@@ -75,6 +75,7 @@ angular.module('expressOApp', ['LocalStorageModule',
         $httpProvider.interceptors.push('errorHandlerInterceptor');
         $httpProvider.interceptors.push('authExpiredInterceptor');
         $httpProvider.interceptors.push('notificationInterceptor');
+        $httpProvider.interceptors.push('corsInterceptor');
         
     })
     .config(['$urlMatcherFactoryProvider', function($urlMatcherFactory) {

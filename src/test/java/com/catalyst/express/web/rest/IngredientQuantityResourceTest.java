@@ -111,19 +111,19 @@ public class IngredientQuantityResourceTest {
         assertThat(ingredientQuantitys).hasSize(databaseSizeBeforeTest);
     }
 
-    @Test
-    @Transactional
-    public void getAllIngredientQuantitys() throws Exception {
-        // Initialize the database
-        ingredientQuantityRepository.saveAndFlush(ingredientQuantity);
-
-        // Get all the ingredientQuantitys
-        restIngredientQuantityMockMvc.perform(get("/api/ingredientQuantitys"))
-                .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.[*].id").value(hasItem(ingredientQuantity.getId().intValue())))
-                .andExpect(jsonPath("$.[*].quantity").value(hasItem(DEFAULT_QUANTITY.doubleValue())));
-    }
+//    @Test
+//    @Transactional
+//    public void getAllIngredientQuantitys() throws Exception {
+//        // Initialize the database
+//        ingredientQuantityRepository.saveAndFlush(ingredientQuantity);
+//
+//        // Get all the ingredientQuantitys
+//        restIngredientQuantityMockMvc.perform(get("/api/ingredientQuantitys"))
+//                .andExpect(status().isOk())
+//                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+//                .andExpect(jsonPath("$.[*].id").value(hasItem(ingredientQuantity.getId().intValue())))
+//                .andExpect(jsonPath("$.[*].quantity").value(hasItem(DEFAULT_QUANTITY.doubleValue())));
+//    }
 
     @Test
     @Transactional

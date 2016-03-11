@@ -6,7 +6,7 @@ angular.module('expressOApp')
         $scope.page = 0;
         $scope.loadAll = function() {
             Category.query({page: $scope.page, size: 20}, function(result, headers) {
-                $scope.links = ParseLinks.parse(headers('link'));
+                //$scope.links = ParseLinks.parse(headers('link'));
                 $scope.categorys = result;
             });
         };
